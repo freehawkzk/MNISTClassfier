@@ -47,9 +47,9 @@ print("Using {} device".format(device))
 #         logits = self.linear_relu_stack(x)
 #         return logits
 
-model = ZKNNNet_3Layer()
-if os.path.exists("model/model_3layer.pth"):
-    model.load_state_dict(torch.load("model/model_3layer.pth"))
+model = ZKNNNet_5Layer()
+if os.path.exists("model/model_5layer.pth"):
+    model.load_state_dict(torch.load("model/model_5layer.pth"))
 model = model.to(device)
 print(model)
 
@@ -103,7 +103,7 @@ for t in range(epochs):
     currentAcc = test(test_dataloader, model)
     if maxAcc < currentAcc:
         maxAcc = currentAcc
-        torch.save(model.state_dict(), "model/model_3layer.pth")
+        torch.save(model.state_dict(), "model/model_5layer.pth")
 print("Done!")
 
 # Save the model
