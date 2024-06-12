@@ -30,6 +30,8 @@ class ZKNNNet_5Layer(nn.Module):
             nn.ReLU(),
             nn.Linear(512, 512),
             nn.ReLU(),
+            nn.Linear(512, 512),
+            nn.ReLU(),
             nn.Linear(512, 10)
         )
 
