@@ -349,7 +349,7 @@ with torch.no_grad():
     print("Accuracy on test set: {:.2f}%".format(accuracy))
 ```
 
-![alt text](inference_example_1.png)
+![alt text](images/inference_example_1.png)
 
 ## 6 模型导出
 
