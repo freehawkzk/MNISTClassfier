@@ -39,3 +39,22 @@ class ZKNNNet_5Layer(nn.Module):
         x = self.flatten(x)
         logits = self.linear_relu_stack(x)
         return logits
+
+class ZKNNNet_Conv(nn.Module):
+    def __init__(self):
+        super(ZKNNNet_Conv, self).__init__()
+        self.conv_stack = nn.Sequential(
+            nn.Conv2d(1, 32, kernel_size=3),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=3),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2),
+            nn.Flatten(),
+            nn.Linear(12*12*64, 128),
+            nn.ReLU(),
+            nn.Linear(128, 10)
+        )
+
+    def forward(self, x):
+        logits = self.conv_stack(x)
+        return logits

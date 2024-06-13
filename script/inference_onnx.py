@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 from PIL import Image
 
-sess = rt.InferenceSession("model/model_3layer.onnx")
+sess = rt.InferenceSession("model/model_conv.onnx")
 input_name = sess.get_inputs()[0].name
 print(input_name)
 
